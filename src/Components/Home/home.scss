@@ -88,8 +88,15 @@
                 font-size: clamp(40px, 8vw, 80px);
             }
             .hero4{
+                padding-top: 10px;
                 font-size: clamp(15px, 3vw, 30px);
             }
+        }
+        @media screen and (max-width: 460px) {
+            grid-template-rows: auto auto 6.5rem auto auto;
+        }
+        @media screen and (max-width: 305px) {
+            grid-template-rows: auto auto 9.2rem auto auto;
         }
     }
     .imageSection{

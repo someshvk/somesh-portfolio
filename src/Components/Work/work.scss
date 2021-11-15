@@ -154,20 +154,11 @@
                     background: #95ffff2a;
                     .titleBox{
                         font-size: clamp(17px,3vw,22px);
-                        // @include tablet{
-                        //     font-size: clamp(20px,4vw,26px);
-                        // }
-                        // @include smallMobile{
-                        //     font-size: 1.5vh;
-                        // }
                     }
                 }
                 @include largeMobile{
                     height: 7vh;
                     line-height: 7vh;
-                    // .titleBox{
-                    //     font-size: 2.7vh;
-                    // }
                 }
             }
             .projectImg{
@@ -197,11 +188,15 @@
     }
     .showMoreBtn{
         width: 100%;
-        height: auto;
+        height: fit-content;
         text-align: center;
         padding: 5vw;
-        .button{
+        .btnBorder{
             @include button;
+        }
+        .button{
+            text-decoration: none;
+            color: #b7c1df;
         }
         @include largeMobile{
             padding: 15vw;

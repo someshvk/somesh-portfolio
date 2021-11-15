@@ -103,6 +103,7 @@
   width: fit-content;
   font-size: 1.4rem;
   text-transform: uppercase;
+  cursor: pointer;
   padding: 0.5em;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
@@ -160,7 +161,22 @@
     font-size: clamp(40px, 8vw, 80px);
   }
   .home .heroSection .hero4 {
+    padding-top: 10px;
     font-size: clamp(15px, 3vw, 30px);
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .home .heroSection {
+    -ms-grid-rows: auto auto 6.5rem auto auto;
+        grid-template-rows: auto auto 6.5rem auto auto;
+  }
+}
+
+@media screen and (max-width: 305px) {
+  .home .heroSection {
+    -ms-grid-rows: auto auto 9.2rem auto auto;
+        grid-template-rows: auto auto 9.2rem auto auto;
   }
 }
 

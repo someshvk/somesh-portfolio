@@ -57,7 +57,9 @@ const Work = () =>{
                 }
             </div>
             <div className="showMoreBtn">
-                <a href="https://github.com/someshvk" rel="noopener noreferrer" target="_blank" className="button">Show More</a>
+                <div className="btnBorder">
+                    <a href="https://github.com/someshvk" rel="noopener noreferrer" target="_blank" className="button">Show More</a>
+                </div>
             </div>
         </section>
     );

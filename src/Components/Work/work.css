@@ -279,12 +279,14 @@
 
 .work .showMoreBtn {
   width: 100%;
-  height: auto;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   text-align: center;
   padding: 5vw;
 }
 
-.work .showMoreBtn .button {
+.work .showMoreBtn .btnBorder {
   text-decoration: none;
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -294,6 +296,7 @@
   width: fit-content;
   font-size: 1.4rem;
   text-transform: uppercase;
+  cursor: pointer;
   padding: 0.5em;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
@@ -306,26 +309,31 @@
   transition: all 0.8s ease;
 }
 
-.work .showMoreBtn .button:hover {
+.work .showMoreBtn .btnBorder:hover {
   color: #95FFFF;
   font-weight: 400;
   border: 2px solid #95FFFF;
 }
 
 @media screen and (max-width: 1055px) {
-  .work .showMoreBtn .button {
+  .work .showMoreBtn .btnBorder {
     font-size: 2vw;
   }
 }
 
 @media screen and (max-width: 540px) {
-  .work .showMoreBtn .button {
+  .work .showMoreBtn .btnBorder {
     font-size: clamp(15px, 3vw, 30px);
   }
-  .work .showMoreBtn .button:hover {
+  .work .showMoreBtn .btnBorder:hover {
     -webkit-transform: scale3d(1.1, 1.1, 1.1);
             transform: scale3d(1.1, 1.1, 1.1);
   }
+}
+
+.work .showMoreBtn .button {
+  text-decoration: none;
+  color: #b7c1df;
 }
 
 @media screen and (max-width: 540px) {
