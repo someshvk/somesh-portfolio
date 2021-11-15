@@ -1,0 +1,32 @@
+@import './variables';
+
+@mixin button {
+    text-decoration: none;
+    height: fit-content;
+    width: fit-content;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    padding: 0.5em;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    text-align: center;
+    border-radius: 1rem;
+    border: 2px dashed #95FFFF;
+    color: #b7c1df;
+    background: #95ffff2a;
+    transition: all 0.8s ease;
+    &:hover{
+        color: #95FFFF;
+        font-weight: 400;
+        border: 2px solid #95FFFF;
+    }
+    @include largeTablet{
+        font-size: 2vw;
+    }
+    @include largeMobile{
+        font-size: clamp(15px, 3vw, 30px);
+        &:hover{
+            transform: scale3d(1.1, 1.1, 1.1);
+        }
+    }
+}

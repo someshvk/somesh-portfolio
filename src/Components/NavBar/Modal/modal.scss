@@ -1,0 +1,62 @@
+@import '../../../Styles/variables';
+
+.modalBg{
+    position: fixed;
+    z-index: 950;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(4, 24, 51, 0.971);
+    font-family: $font-sans;
+
+    .modalContent{
+        height: 85vh;
+        width: 65vw;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border: 2px dashed #95FFFF;
+        z-index: 951;
+        background: #062041;
+        display: grid;
+        text-align: center;
+        align-items: center;
+        grid-template-areas: 
+        'home'
+        'about'
+        'work'
+        'contact';
+
+        .homeMenu{
+            grid-area: home;
+        }
+        .aboutMenu{
+            grid-area: about;
+        }
+        .workMenu{
+            grid-area: work;
+        }
+        .contactMenu{
+            grid-area: contact;
+        }
+
+        .menu{
+            color: #ccd6f6;
+            cursor: pointer;
+            font-size: clamp(15px ,4.5vw ,18px);
+            transition: 0.6s;
+            &:hover, &:focus{
+                color: #95FFFF;
+                transform: scale3d(1.1, 1.1, 1.1);
+                .highlightedText{
+                    color: #ccd6f6;
+                }
+            }
+            .highlightedText{
+                color: #95FFFF;
+            }
+        }
+    }
+}

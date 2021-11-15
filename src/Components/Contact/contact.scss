@@ -1,0 +1,130 @@
+@import '../../Styles/mixins';
+@import '../../Styles/variables';
+@import '../../Styles/helpers';
+
+.contact{
+    width: 90vw;
+    height: fit-content;
+    right: 5vw;
+    padding: 7vw;
+    padding-top: 3vw;
+    padding-bottom: 0.2vw;
+    display: grid;
+    font-family: $font-sans;
+    grid-template-areas: 'heading' 'container';
+    grid-template-rows: 7vh auto;
+
+    @include tablet{
+        width: 100vw;
+        top: 10vw;
+    }
+    @include largeMobile{
+        width: 100vw;
+        top: 7vh;
+        bottom: 0;
+        right: 0;
+    }
+    .contactHeading{
+        grid-area: heading;
+        line-height: 7vh;
+        
+        .contactText{
+            color: #ccd6f6;
+            border-style: dashed;
+            font-size: 1.5vw;
+            padding: 0.5vw;
+            font-weight: 500;
+            border-width: 2px;
+            border-color: #95FFFF;
+            .highlightedText{
+                color: #95FFFF;
+            }
+            @include tablet{
+                font-size: clamp(18px,4vw,24px);
+            }
+            @include largeMobile{
+                font-size: clamp(20px,4vw,26px);
+                padding: 1vw;
+            }
+        }
+    }
+    .contactContainer{
+        grid-area: container;
+        height: fit-content;
+        padding: 2vw;
+        text-align: center;
+        .getInTouch{
+            color: #95FFFF;
+            font-size: clamp(24px, 6vw, 52px);
+        }
+        .contactForm{
+            margin-top: 3vw;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+
+            input, textarea{
+                background: #95ffff13;
+                border: 2px dashed #95ffff;
+                color: #ccd6f6;
+                padding: 0.7em;
+                font-size: 0.8rem;
+                border-radius: 0.3rem;
+                width: 44vh;
+
+                @include largeMobile{
+                    width: 50vw;
+                }
+
+                &::placeholder{
+                    color: #8892b0;
+                }
+                &:focus{
+                    background: #9cfcfc2a;
+                    outline:none;
+                    border: 2px solid #95FFFF;
+                }
+            }
+            textarea{
+                width: 44vh;
+                height: 24vh;
+                font-size: 0.9rem;
+                @include largeMobile{
+                    width: 50vw;
+                }
+            }
+            .contactBtn{
+                width: 12vh;
+                height: 5vh;
+                font-weight: bold;
+                font-size: 1rem;
+                cursor: pointer;
+                background: #95FFFF;
+                border: none;
+                border-radius: 0.3rem;
+                color: #001229;
+                transition: all 0.6s;
+                &:hover{
+                    transform: scale3d(1.05, 1.05, 1.05);
+                }
+            }
+        }
+    }
+    .footer{
+        margin-top: 5vh;
+        bottom: 0;
+        text-align: center;
+        h3{
+            color: #ccd6f6;
+            font-size: 1.1rem;
+            font-weight: 400;
+            line-height: 1rem;
+            &:hover, &:focus{
+                color: #95FFFF;
+            }
+        }
+    }
+}

@@ -1,0 +1,77 @@
+.modalBg {
+  position: fixed;
+  z-index: 950;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(4, 24, 51, 0.971);
+  font-family: "Calibre", "Inter", "San Francisco", "SF Pro Text", -apple-system, system-ui, sans-serif;
+}
+
+.modalBg .modalContent {
+  height: 85vh;
+  width: 65vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border: 2px dashed #95FFFF;
+  z-index: 951;
+  background: #062041;
+  display: -ms-grid;
+  display: grid;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+      grid-template-areas: 'home' 'about' 'work' 'contact';
+}
+
+.modalBg .modalContent .homeMenu {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: home;
+}
+
+.modalBg .modalContent .aboutMenu {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: about;
+}
+
+.modalBg .modalContent .workMenu {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: work;
+}
+
+.modalBg .modalContent .contactMenu {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  grid-area: contact;
+}
+
+.modalBg .modalContent .menu {
+  color: #ccd6f6;
+  cursor: pointer;
+  font-size: clamp(15px, 4.5vw, 18px);
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+}
+
+.modalBg .modalContent .menu:hover, .modalBg .modalContent .menu:focus {
+  color: #95FFFF;
+  -webkit-transform: scale3d(1.1, 1.1, 1.1);
+          transform: scale3d(1.1, 1.1, 1.1);
+}
+
+.modalBg .modalContent .menu:hover .highlightedText, .modalBg .modalContent .menu:focus .highlightedText {
+  color: #ccd6f6;
+}
+
+.modalBg .modalContent .menu .highlightedText {
+  color: #95FFFF;
+}
+/*# sourceMappingURL=modal.css.map */

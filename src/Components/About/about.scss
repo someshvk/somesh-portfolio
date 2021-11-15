@@ -1,0 +1,100 @@
+@import '../../Styles/mixins';
+@import '../../Styles/variables';
+@import '../../Styles/helpers';
+
+.about{
+    width: 90vw;
+    height: 100vh;
+    right: 5vw;
+    padding: 7vw;
+    padding-top: 5vw;
+    font-family: $font-sans;
+    display: grid;
+    grid-template-areas: 'heading' 'container';
+    grid-template-rows: 7vh auto;
+    grid-template-columns: auto;
+
+    @include tablet{
+        width: 100vw;
+        padding-top: 10vw;
+    }
+    @include largeMobile{
+        width: 100vw;
+        height: fit-content;
+        bottom: 0;
+        right: 0;
+    }
+    .aboutHeading{
+        grid-area: heading;
+        line-height: 7vh;
+        .aboutText{
+            color: #ccd6f6;
+            font-size: 1.5vw;
+            padding: 0.5vw;
+            font-weight: 500;
+            border: 2px dashed #95FFFF;
+            @include tablet{
+                font-size: clamp(18px,4vw,24px);
+            }
+            @include largeMobile{
+                font-size: clamp(20px,4vw,26px);
+                padding: 1vw;
+            }
+        }
+    }
+    .aboutContainer{
+        height: fit-content;
+        width: 100%;
+        grid-area: container;
+        display: grid;
+        grid-template-areas: 'cont image';
+        grid-template-rows: auto;
+        grid-template-columns: 70% 30%;
+
+        .aboutContent{
+            grid-area: cont;
+            padding: 3vw;
+            padding-left: 0.5vw;
+            color: #8892b0;
+            font-size: 1.4vw;
+            @include largeTablet{
+                font-size: 2.6vh;
+            }
+            @include largeMobile{
+                font-size: clamp(15px, 3vw, 30px);
+                padding-left: 1vw;
+            }
+        }
+        .recentTech{
+            grid-area: image;
+            margin-top: 3vw;
+            height: fit-content;
+            border: 2px dashed #95FFFF;
+            padding: 1rem;
+            color: #8892b0;
+            font-size: clamp(15px, 1.4vw, 30px);
+            ul{
+                list-style: none;
+                color: #ccd6f6;
+                margin: 0;
+                padding-top: 0.9rem;
+                padding-left: 0;
+            }
+            li{
+                margin: 0.8rem;
+            }
+
+            @include largeMobile{
+                margin-top: 0.2vw;
+            }
+        }
+        @include largeMobile{
+            grid-template-areas: 'cont' 'image';
+            grid-template-rows: auto auto;
+            grid-template-columns: auto;
+        }
+    }
+    .highlightedText{
+        color: #95FFFF;
+    }
+}

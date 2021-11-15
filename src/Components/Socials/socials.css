@@ -1,0 +1,95 @@
+.socials {
+  height: 100vh;
+  position: fixed;
+  z-index: 1000;
+  right: 0;
+  width: 5vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.socials ul {
+  padding: 0;
+}
+
+.socials li {
+  cursor: pointer;
+  font-size: 1.5em;
+  margin: 35%;
+  list-style: none;
+}
+
+@media screen and (max-width: 760px) {
+  .socials li {
+    margin-left: 0;
+  }
+}
+
+.socials .fab, .socials .fas {
+  color: #cedaf2d7;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.socials .fab:hover, .socials .fab:focus, .socials .fas:hover, .socials .fas:focus {
+  -webkit-transform: scale(1.3);
+          transform: scale(1.3);
+}
+
+.socials .fa-linkedin:hover {
+  color: #0e76a8;
+}
+
+.socials .fa-twitter:hover {
+  color: #1DA1F2;
+}
+
+.socials .fa-github:hover {
+  color: #333;
+}
+
+.socials .fa-codepen:hover {
+  color: #000000;
+}
+
+.socials .fa-at:hover {
+  color: #c5251f;
+}
+
+@media screen and (max-width: 1049px) {
+  .socials {
+    font-size: 1.55vw;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .socials {
+    font-size: clamp(15px, 1.5vw, 20px);
+  }
+}
+
+.socials .verticalLine {
+  position: absolute;
+  height: 30vh;
+  width: 0.1vh;
+  background: #cedaf2d7;
+  bottom: 0;
+  right: 50%;
+  left: 50%;
+}
+
+@media screen and (max-width: 760px) {
+  .socials .verticalLine {
+    right: 70%;
+    left: 30%;
+  }
+}
+/*# sourceMappingURL=socials.css.map */
