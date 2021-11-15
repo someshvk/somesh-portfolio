@@ -41,27 +41,24 @@ module.exports = {
                 // },
             },
             {
-                test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                test: /\.(png|svg|jpg|jpeg|gif|pdf)$/i,
                 exclude: /node_modules/,
                 loader: require.resolve('url-loader'),
                 options: {
                     name: '[name].[ext]',
                 }
-                // use: ['file-loader?name=[name].[ext]',
-                //        'url-loader'
-                //     ] 
             },
-            {
-                test: /\.pdf$/i,
-                use: [
-                    {
-                        loader: 'file-loader',
-                        options: {
-                          name: '[name].[ext]'
-                        }
-                    }
-                ] 
-            }
+            // {
+            //     test: /\.pdf$/i,
+            //     use: [
+            //         {
+            //             loader: 'file-loader',
+            //             options: {
+            //               name: '[name].[ext]'
+            //             }
+            //         }
+            //     ] 
+            // }
         ]
     },
     plugins:[
