@@ -10,7 +10,7 @@ import About from './Components/About/About';
 import Work from './Components/Work/Work';
 import Contact from './Components/Contact/Contact';
 import NavBar from './Components/NavBar/NavBar';
-import {BrowserRouter as Router, Routes, Route, Navigate} from 'react-router-dom';
+import {HashRouter as Router, Routes, Route, Navigate} from 'react-router-dom';
 
 function UnionComponent(){
     const [loading, setLoading] = useState(false);
