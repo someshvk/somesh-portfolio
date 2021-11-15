@@ -31,6 +31,15 @@ const Home = () =>{
 
     let isMobile = (width <= 540);
 
+    const showResume = () => {
+        const iframe = "<iframe width='100%' height='100%' style={{margin: '0'}} src='" + Resume+ "'></iframe>"
+        const x = window.open();
+        x.document.title = 'Resume';
+        x.document.open();
+        x.document.write(iframe);
+        x.document.close();
+    }
+
     return (
         <section className="home" id="home" style={{position: isMobile ? 'static' : 'absolute'}}>
             <div className="heroSection">
@@ -39,7 +48,7 @@ const Home = () =>{
                 <h1 className="hero3">I am a <span className="highlightedText">{aboutText}</span>.</h1>
                 <p className="hero4">I am an <span className="highlightedText">Enthusiastic Learner</span> who likes to work on different technologies and create stuffs.</p>
                 <div className="resumeBtn">
-                    <a href={Resume} rel="noopener noreferrer" target="_blank" className="button">Resume</a>
+                    <span className="button" onClick={()=>showResume()}>Resume</span>
                 </div>
             </div>
             <div className="imageSection">
