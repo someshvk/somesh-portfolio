@@ -20,7 +20,7 @@ const Work = () =>{
     
     return (
         <section className="work" id="work" style={{position: isMobile ? 'static' : 'absolute'}}>
-            <div className="workHeading"><span className="workText"><span className="highlightedText">2. </span>Work</span></div>
+            <div className="workHeading"><span className="workText"><span className="highlightedText">3. </span>Work</span></div>
             <div className="workContainer">
                 {
                     projects.map((project, index)=>{

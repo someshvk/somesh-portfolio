@@ -41,7 +41,7 @@ const Contact = () =>{
 
     return (
         <section className="contact" id="contact" style={{position: isMobile ? 'static' : 'absolute'}}>
-            <div className="contactHeading"><span className="contactText"><span className="highlightedText">3. </span>Contact</span></div>
+            <div className="contactHeading"><span className="contactText"><span className="highlightedText">4. </span>Contact</span></div>
             <div className="contactContainer">
                 <span className="getInTouch">Get In Touch</span>
                 <form className="contactForm" onSubmit={submitMail}> 

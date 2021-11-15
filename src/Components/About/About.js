@@ -21,7 +21,7 @@ const About = () =>{
 
     return (
         <section className="about" id="about" style={{position: isMobile ? 'static' : 'absolute'}}>
-            <div className="aboutHeading"><span className="aboutText"><span className="highlightedText">1. </span>About</span></div>
+            <div className="aboutHeading"><span className="aboutText"><span className="highlightedText">2. </span>About</span></div>
             <div className="aboutContainer">
                 <div className="aboutContent">
                     <p>
