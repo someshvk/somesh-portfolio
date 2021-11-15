@@ -43,3 +43,7 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 export default GlobalStyle;
+
+// "homepage": "https://someshvk.github.io/somesh-portfolio",
+// "predeploy": "npm run build",
+//     "deploy": "gh-pages -d build"

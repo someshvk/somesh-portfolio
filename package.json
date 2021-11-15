@@ -1,14 +1,11 @@
 {
-  "homepage": "https://someshvk.github.io/somesh-portfolio",
   "name": "somesh-portfolio",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "serve": "webpack serve --mode development",
-    "build": "webpack --mode production",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "build": "webpack --mode production"
   },
   "keywords": [],
   "author": "",
