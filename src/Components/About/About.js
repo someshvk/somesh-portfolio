@@ -41,7 +41,7 @@ const About = () =>{
                     {
                         technologies.map((t, index)=>{
                             return (
-                                <li key={index}><span className="highlightedText">▹</span><span>{t}</span></li>
+                                <li key={index}><span className="highlightedText">▹ </span><span>{t}</span></li>
                             );
                         })
                     }

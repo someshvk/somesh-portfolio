@@ -11,7 +11,7 @@ const Work = () =>{
     useEffect(() => {
         window.addEventListener('resize', handleWindowSizeChange);
         return () => {
-            // window.removeEventListener('resize', handleWindowSizeChange);
+            window.removeEventListener('resize', handleWindowSizeChange);
             setWidth({});
         }
     }, []);

@@ -38,6 +38,7 @@ const GlobalStyle = createGlobalStyle`
         // width: 85.375em;
         min-height: 100%;
         overflow-x: hidden;
+        box-sizing: border-box;
         background-color: #001229;
     }
 `;

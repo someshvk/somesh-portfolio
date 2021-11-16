@@ -2,6 +2,8 @@
   height: 7vh;
   width: 100%;
   position: fixed;
+  overflow: hidden;
+  padding-right: 1vw;
   background-color: #041833bd;
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);

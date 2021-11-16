@@ -27,7 +27,6 @@
         padding-top: 15vw;
         padding-bottom: 10vw;
         padding-left: 5vw;
-        padding-right: 1vw;
         grid-area: hero;
         font-family: $font-sans;
         display: grid;
@@ -77,8 +76,8 @@
         }
         @include largeMobile{
             padding-top: 15vh;
-            padding-left: 7vw;
-            padding-right: 1vw;
+            padding-left: 5vw;
+            margin-right: 3vw;
             grid-template-rows: auto auto auto auto auto;
             .hero1{
                 font-size: clamp(14px ,5vw ,16px);
