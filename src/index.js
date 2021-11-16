@@ -19,7 +19,7 @@ function UnionComponent(){
         setLoading(true);
         setTimeout(()=>{
           setLoading(false);
-        }, 2000);
+        }, 1000);
     }, []);
 
     const [width, setWidth] = useState(window.innerWidth);

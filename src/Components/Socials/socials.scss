@@ -1,4 +1,5 @@
 @import '../../Styles/mixins';
+@import '../../Styles/variables';
 
 .socials{
     height: 100vh;
@@ -22,6 +23,7 @@
             margin-left: 0;
         }
     }
+    
     .fab, .fas{
         color: #cedaf2d7;
         transition: 0.5s;
