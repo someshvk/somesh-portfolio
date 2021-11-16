@@ -35,6 +35,7 @@
   padding-top: 15vw;
   padding-bottom: 10vw;
   padding-left: 5vw;
+  padding-right: 1vw;
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: hero;
@@ -148,6 +149,7 @@
   .home .heroSection {
     padding-top: 15vh;
     padding-left: 7vw;
+    padding-right: 1vw;
     -ms-grid-rows: auto auto auto auto auto;
         grid-template-rows: auto auto auto auto auto;
   }
