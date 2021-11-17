@@ -282,7 +282,6 @@
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  text-align: center;
   padding: 5vw;
 }
 
@@ -307,6 +306,7 @@
   background: #95ffff2a;
   -webkit-transition: all 0.8s ease;
   transition: all 0.8s ease;
+  margin: 0 auto;
 }
 
 .work .showMoreBtn .btnBorder:hover {

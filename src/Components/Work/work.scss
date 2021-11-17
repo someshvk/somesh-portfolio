@@ -189,10 +189,10 @@
     .showMoreBtn{
         width: 100%;
         height: fit-content;
-        text-align: center;
         padding: 5vw;
         .btnBorder{
             @include button;
+            margin: 0 auto;
         }
         .button{
             text-decoration: none;
