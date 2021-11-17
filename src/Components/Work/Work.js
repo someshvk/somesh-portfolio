@@ -26,9 +26,9 @@ const Work = () =>{
                     projects.map((project, index)=>{
                         return (
                             <div key={index} className="projects">
-                                <div className="workImage">
+                                <div className="workImage"  onClick={window.open(project.url, '_blank')}>
                                     <span className="projectTitle"><div className="titleBorder"><span className="titleBox">{project.title}</span></div></span>
-                                    <img className="projectImg" src={project.img} alt="img" onClick={window.open(project.url, '_blank')}></img>
+                                    <img className="projectImg" src={project.img} alt="img"></img>
                                 </div>
                                 <div className="workContent">
                                     <span className="projectDes">
