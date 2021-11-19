@@ -66,7 +66,7 @@ function UnionComponent(){
                         isMobile 
                         ?
                         <Router>
-                            <React.Suspense fallback={<LazyLoader />}>
+                            <React.Suspense fallback={<h1>Loading...</h1>}>
                             <LazyTabMenu />
                             <LazySocials />
                                 <Routes>
@@ -80,7 +80,7 @@ function UnionComponent(){
                         </Router>
                         :
                         <>
-                        <React.Suspense fallback={<LazyLoader />}>
+                        <React.Suspense fallback={<h1>Loading...</h1>}>
                             <LazyNavBar />
                             <Home />
                             <LazyAbout />
