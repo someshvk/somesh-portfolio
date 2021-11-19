@@ -79,8 +79,8 @@ function UnionComponent(){
                         </Router>
                         :
                         <>
-                        <NavBar />
                         <React.Suspense fallback={<Loader />}>
+                            <NavBar />
                             <Home />
                             <LazyAbout />
                             <LazyWork />
