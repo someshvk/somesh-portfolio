@@ -4,6 +4,7 @@ import GlobalStyles from './Styles/GlobalStyles';
 import Loader from './Components/Loader/Loader';
 import Home from './Components/Home/Home';
 import TabMenu from './Components/TabsMenu/TabMenu';
+import NavBar from './Components/NavBar/NavBar';
 import {HashRouter as Router, Routes, Route, Navigate} from 'react-router-dom';
 
 const retry = (fn, ms) => new Promise(resolve => { 
@@ -18,7 +19,6 @@ const retry = (fn, ms) => new Promise(resolve => {
 });
 // const LazyTabMenu = React.lazy(() => retry(() => import('./Components/TabsMenu/TabMenu')));
 const LazySocials = React.lazy(() => retry(() => import('./Components/Socials/Socials')));
-const LazyNavBar = React.lazy(() => retry(() => import('./Components/NavBar/NavBar')));
 const LazyAbout = React.lazy(() => retry(() => import('./Components/About/About')));
 const LazyWork = React.lazy(() => retry(() => import('./Components/Work/Work')));
 const LazyContact = React.lazy(() => retry(() => import('./Components/Contact/Contact')));
