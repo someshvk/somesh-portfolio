@@ -1,4 +1,3 @@
-// require('file-loader?name=[name].[ext]!./index.html');
 import React, {useState, useEffect} from "react";
 import ReactDOM from "react-dom";
 import GlobalStyles from './Styles/GlobalStyles';
@@ -17,12 +16,11 @@ const retry = (fn, ms) => new Promise(resolve => {
       .then(resolve)
       .catch(() => {
         setTimeout(() => {
-          console.log('retrying...');
+          console.log('Retrying...');
           retry(fn, ms).then(resolve);
         }, ms);
     })
 });
-  
 
 const LazyAbout = React.lazy(() => retry(() => import('./Components/About/About')));
 const LazyWork = React.lazy(() => retry(() => import('./Components/Work/Work')));
