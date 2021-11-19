@@ -10,6 +10,7 @@ const TabMenu = () => {
     const location = useLocation();
 
     const [tabState, setTabState] = useState(location.pathname);
+
     const tabsItem = [
         {id: 1, title: 'Home', value:'/home'}, 
         {id: 2, title: 'About', value:'/about'},

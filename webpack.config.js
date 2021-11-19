@@ -1,17 +1,13 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-// const loader = require('sass-loader');
-// const CopyWebpackPlugin = require("copy-webpack-plugin");
-// const srcDir = path.resolve(__dirname, 'src');
 
 module.exports = {
     entry: path.resolve(__dirname, './src/index.js'),
     output:{
         path: path.join(__dirname, '/build'),
         filename: 'index.bundle.js',
-        publicPath: '/',
-        // assetModuleFilename: "images/[name].[ext][query]",
+        publicPath: './',
     },
     devServer:{
         port: 3000,
@@ -30,15 +26,19 @@ module.exports = {
                 }
             },
             {
-                test: /\.css$/i,
+                test: /\.scss$/i,
                 use: [
-                    MiniCssExtractPlugin.loader,
+                    'style-loader',
                     'css-loader',
                     'sass-loader',
                 ],
-                // options: {
-                //     sourceMap: true,
-                // },
+            },
+            {
+                test: /\.css$/i,
+                use: [
+                        MiniCssExtractPlugin.loader,
+                        'css-loader',
+                ],
             },
             {
                 test: /\.(png|svg|jpg|jpeg|gif|pdf)$/i,
@@ -51,7 +51,12 @@ module.exports = {
         ]
     },
     plugins:[
-        new MiniCssExtractPlugin(),
+        new MiniCssExtractPlugin(
+            {
+                filename: "[name].css",
+                chunkFilename: "[id].css",
+            }
+        ),
         new HtmlWebpackPlugin(
             {
                 title: 'Somesh Khandelwal',
