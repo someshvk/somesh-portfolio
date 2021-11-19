@@ -1,7 +1,9 @@
 import React, {useState, useEffect} from "react";
 import ReactDOM from "react-dom";
 import GlobalStyles from './Styles/GlobalStyles';
+import Loader from './Components/Loader/Loader';
 import Home from './Components/Home/Home';
+import TabMenu from './Components/TabsMenu/TabMenu';
 import {HashRouter as Router, Routes, Route, Navigate} from 'react-router-dom';
 
 const retry = (fn, ms) => new Promise(resolve => { 
@@ -14,8 +16,7 @@ const retry = (fn, ms) => new Promise(resolve => {
         }, ms);
     })
 });
-const LazyLoader = React.lazy(() => retry(() => import('./Components/Loader/Loader')));
-const LazyTabMenu = React.lazy(() => retry(() => import('./Components/TabsMenu/TabMenu')));
+// const LazyTabMenu = React.lazy(() => retry(() => import('./Components/TabsMenu/TabMenu')));
 const LazySocials = React.lazy(() => retry(() => import('./Components/Socials/Socials')));
 const LazyNavBar = React.lazy(() => retry(() => import('./Components/NavBar/NavBar')));
 const LazyAbout = React.lazy(() => retry(() => import('./Components/About/About')));
@@ -55,9 +56,7 @@ function UnionComponent(){
             {
                 loading ? 
                 (
-                    <React.Suspense fallback={<h1>Loading...</h1>}>
-                        <LazyLoader />
-                    </React.Suspense>
+                    <Loader />
                 )
                 :
                 (
@@ -66,8 +65,8 @@ function UnionComponent(){
                         isMobile 
                         ?
                         <Router>
-                            <React.Suspense fallback={<h1>Loading...</h1>}>
-                            <LazyTabMenu />
+                            <TabMenu />
+                            <React.Suspense fallback={<Loader />}>
                             <LazySocials />
                                 <Routes>
                                     <Route path="/" element={<Navigate replace to="/home" />} />
@@ -80,8 +79,8 @@ function UnionComponent(){
                         </Router>
                         :
                         <>
-                        <React.Suspense fallback={<h1>Loading...</h1>}>
-                            <LazyNavBar />
+                        <NavBar />
+                        <React.Suspense fallback={<Loader />}>
                             <Home />
                             <LazyAbout />
                             <LazyWork />
