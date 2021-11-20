@@ -3,8 +3,8 @@ import ReactDOM from "react-dom";
 import GlobalStyles from './Styles/GlobalStyles';
 import Loader from './Components/Loader/Loader';
 import Home from './Components/Home/Home';
-import TabMenu from './Components/TabsMenu/TabMenu';
-import NavBar from './Components/NavBar/NavBar';
+// import TabMenu from './Components/TabsMenu/TabMenu';
+// import NavBar from './Components/NavBar/NavBar';
 import {HashRouter as Router, Routes, Route, Navigate} from 'react-router-dom';
 
 // const retry = (fn, ms) => new Promise(resolve => { 
@@ -17,7 +17,9 @@ import {HashRouter as Router, Routes, Route, Navigate} from 'react-router-dom';
 //         }, ms);
 //     })
 // });
-// const LazyTabMenu = React.lazy(() => retry(() => import('./Components/TabsMenu/TabMenu')));
+
+const LazyTabMenu = React.lazy(() => import('./Components/TabsMenu/TabMenu'));
+const LazyNavBar = React.lazy(() => import('./Components/NavBar/NavBar'));
 const LazySocials = React.lazy(() => import('./Components/Socials/Socials'));
 const LazyAbout = React.lazy(() => import('./Components/About/About'));
 const LazyWork = React.lazy(() => import('./Components/Work/Work'));
@@ -65,24 +67,22 @@ function UnionComponent(){
                         isMobile 
                         ?
                         <Router>
-                            <TabMenu />
                             <React.Suspense fallback={<Loader />}>
-                                <>
-                                    <LazySocials />
-                                    <Routes>
-                                        <Route path="/" element={<Navigate replace to="/home" />} />
-                                        <Route path="/home" element={<Home />} />
-                                        <Route path="/about" element={<LazyAbout />} />
-                                        <Route path="/work" element={<LazyWork />} />
-                                        <Route path="/contact" element={<LazyContact />} />
-                                    </Routes>
-                                </>
+                                <LazyTabMenu />
+                                <LazySocials />
+                                <Routes>
+                                    <Route path="/" element={<Navigate replace to="/home" />} />
+                                    <Route path="/home" element={<Home />} />
+                                    <Route path="/about" element={<LazyAbout />} />
+                                    <Route path="/work" element={<LazyWork />} />
+                                    <Route path="/contact" element={<LazyContact />} />
+                                </Routes>
                             </React.Suspense>
                         </Router>
                         :
                         <>
-                        <NavBar />
                         <React.Suspense fallback={<Loader />}>
+                            <LazyNavBar />
                             <Home />
                             <LazyAbout />
                             <LazyWork />
