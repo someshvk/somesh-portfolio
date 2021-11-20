@@ -1,7 +1,8 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-// var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = {
     entry: path.resolve(__dirname, './src/index.js'),
@@ -37,8 +38,8 @@ module.exports = {
             {
                 test: /\.css$/i,
                 use: [
-                        MiniCssExtractPlugin.loader,
-                        'css-loader',
+                    MiniCssExtractPlugin.loader,
+                    'css-loader',
                 ],
             },
             {
@@ -70,5 +71,11 @@ module.exports = {
                 }
             }
         ),
-    ]
+    ],
+    optimization: {
+        minimizer: [
+          new OptimizeCssAssetsPlugin(),
+          new TerserPlugin(),
+        ],
+      },
 };
