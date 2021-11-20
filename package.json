@@ -38,6 +38,7 @@
     "gh-pages": "^3.2.3",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.4.4",
+    "optimize-css-assets-webpack-plugin": "^6.0.1",
     "sass": "^1.43.4",
     "sass-loader": "^12.3.0",
     "style-loader": "^3.3.1",

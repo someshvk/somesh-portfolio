@@ -1,6 +1,7 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+// var OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 module.exports = {
     entry: path.resolve(__dirname, './src/index.js'),
@@ -68,6 +69,6 @@ module.exports = {
                     collapseWhitespace: true,
                 }
             }
-        )
+        ),
     ]
 };
