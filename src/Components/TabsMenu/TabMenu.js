@@ -25,7 +25,7 @@ const TabMenu = () => {
                 tabsItem.map((tab, index) => {
                     return (
                         <Link key={index} to={tab.value} style={{ textDecoration: 'none' }}>
-                            <li className={tab.value === tabState ? 'tabs active' : 'tabs'} onClick={()=>setTabState(tab.value)}>{tab.title}</li>
+                            <li className={tab.value === tabState ? 'tabs active' : 'tabs'} onClick={()=> setTabState(tab.value)}>{tab.title}</li>
                         </Link>
                     );
                 })

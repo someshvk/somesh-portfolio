@@ -7,21 +7,21 @@ import TabMenu from './Components/TabsMenu/TabMenu';
 import NavBar from './Components/NavBar/NavBar';
 import {HashRouter as Router, Routes, Route, Navigate} from 'react-router-dom';
 
-const retry = (fn, ms) => new Promise(resolve => { 
-    fn()
-      .then(resolve)
-      .catch(() => {
-        setTimeout(() => {
-          console.log('Retrying...');
-          retry(fn, ms).then(resolve);
-        }, ms);
-    })
-});
+// const retry = (fn, ms) => new Promise(resolve => { 
+//     fn()
+//       .then(resolve)
+//       .catch(() => {
+//         setTimeout(() => {
+//           console.log('Retrying...');
+//           retry(fn, ms).then(resolve);
+//         }, ms);
+//     })
+// });
 // const LazyTabMenu = React.lazy(() => retry(() => import('./Components/TabsMenu/TabMenu')));
-const LazySocials = React.lazy(() => retry(() => import('./Components/Socials/Socials')));
-const LazyAbout = React.lazy(() => retry(() => import('./Components/About/About')));
-const LazyWork = React.lazy(() => retry(() => import('./Components/Work/Work')));
-const LazyContact = React.lazy(() => retry(() => import('./Components/Contact/Contact')));
+const LazySocials = React.lazy(() => import('./Components/Socials/Socials'));
+const LazyAbout = React.lazy(() => import('./Components/About/About'));
+const LazyWork = React.lazy(() => import('./Components/Work/Work'));
+const LazyContact = React.lazy(() => import('./Components/Contact/Contact'));
 
 function UnionComponent(){
     const [loading, setLoading] = useState(false);
@@ -67,20 +67,22 @@ function UnionComponent(){
                         <Router>
                             <TabMenu />
                             <React.Suspense fallback={<Loader />}>
-                            <LazySocials />
-                                <Routes>
-                                    <Route path="/" element={<Navigate replace to="/home" />} />
-                                    <Route path="/home" element={<Home />} />
-                                    <Route path="/about" element={<LazyAbout />} />
-                                    <Route path="/work" element={<LazyWork />} />
-                                    <Route path="/contact" element={<LazyContact />} />
-                                </Routes>
+                                <>
+                                    <LazySocials />
+                                    <Routes>
+                                        <Route path="/" element={<Navigate replace to="/home" />} />
+                                        <Route path="/home" element={<Home />} />
+                                        <Route path="/about" element={<LazyAbout />} />
+                                        <Route path="/work" element={<LazyWork />} />
+                                        <Route path="/contact" element={<LazyContact />} />
+                                    </Routes>
+                                </>
                             </React.Suspense>
                         </Router>
                         :
                         <>
+                        <NavBar />
                         <React.Suspense fallback={<Loader />}>
-                            <NavBar />
                             <Home />
                             <LazyAbout />
                             <LazyWork />
