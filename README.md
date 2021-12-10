@@ -10,5 +10,6 @@
   Currently hosted on GitHub with <b>git-pages</b>.
 </p>
 <div align="center">
-  
+  <h3><b>Demo :</b></h3>
+  <img alt="demo" src="https://raw.githubusercontent.com/someshvk/somesh-portfolio/main/demo.jpg" />
 </div>
